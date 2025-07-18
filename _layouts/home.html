@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+<div class="home-container">
+    <!-- Professional Identity Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">{{ site.author }}</h1>
+            <p class="hero-subtitle">{{ page.subtitle | default: "Software Developer & Jekyll Enthusiast" }}</p>
+            <p class="hero-description">{{ page.description | default: site.description }}</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="home-content">
+        {{ content }}
+    </div>
+
+    <!-- Featured Projects Section -->
+    <section class="featured-section">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="featured-grid">
+            {% for project in site.projects limit:3 %}
+                {% include project-card.html project=project %}
+            {% endfor %}
+        </div>
+        <div class="section-footer">
+            <a href="/projects.html" class="view-all-link">View All Projects →</a>
+        </div>
+    </section>
+
+    <!-- Skills & Learning Section -->
+    <section class="skills-section">
+        <h2 class="section-title">What I've Learned</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Jekyll & Static Sites</h3>
+                <p>File structure, layouts, templating, and deployment with GitHub Pages</p>
+            </div>
+            <div class="skill-card">
+                <h3>Modern CSS & Sass</h3>
+                <p>Variables, nesting, mixins, and professional styling architecture</p>
+            </div>
+            <div class="skill-card">
+                <h3>Site Organization</h3>
+                <p>Best practices for maintainable, scalable web projects</p>
+            </div>
+        </div>
+    </section>
+</div>

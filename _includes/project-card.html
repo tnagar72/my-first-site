@@ -1,0 +1,52 @@
+<!-- Project Card Component inspired by Fred Hohman's feature.html -->
+<article class="project-card">
+    <div class="project-image">
+        {% if include.project.image %}
+            <a href="{{ include.project.url }}">
+                <img src="{{ include.project.image | relative_url }}" alt="{{ include.project.title }}">
+            </a>
+        {% else %}
+            <a href="{{ include.project.url }}">
+                <div class="project-placeholder">
+                    <span class="project-icon">🚀</span>
+                </div>
+            </a>
+        {% endif %}
+    </div>
+    
+    <div class="project-content">
+        <h3 class="project-title">
+            <a href="{{ include.project.url }}">{{ include.project.title }}</a>
+        </h3>
+        
+        {% if include.project.tech %}
+            <p class="project-tech">{{ include.project.tech }}</p>
+        {% endif %}
+        
+        {% if include.project.status %}
+            <span class="project-status status-{{ include.project.status | downcase | replace: ' ', '-' }}">
+                {{ include.project.status }}
+            </span>
+        {% endif %}
+        
+        <p class="project-description">
+            {{ include.project.content | strip_html | truncate: 120 }}
+        </p>
+        
+        <div class="project-links">
+            <a href="{{ include.project.url }}" class="project-link primary">
+                View Project
+            </a>
+            {% if include.project.demo %}
+                <a href="{{ include.project.demo }}" class="project-link secondary">
+                    Demo
+                </a>
+            {% endif %}
+            {% if include.project.github %}
+                <a href="{{ include.project.github }}" class="project-link secondary">
+                    Code
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</article>

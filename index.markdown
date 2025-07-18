@@ -1,47 +1,26 @@
 ---
-layout: default
-title: Jekyll Learning Journey
+layout: home
+title: Home
+subtitle: Software Developer & Jekyll Enthusiast
+description: I'm passionate about learning web development and building beautiful, functional websites. This site showcases my journey mastering Jekyll, from basic concepts to professional deployment.
 ---
 
-<div class="hero">
-    <div class="container">
-        <h1 class="hero-title">Jekyll Learning Journey</h1>
-        <p class="hero-subtitle">Mastering static site generation from the ground up</p>
-        <div class="hero-actions">
-            <a href="/about/" class="btn btn-primary">Learn More</a>
-            <a href="/projects.html" class="btn btn-secondary">View Projects</a>
-        </div>
-    </div>
-</div>
+## About This Journey
 
-<div class="container">
-    <section class="features">
-        <h2>What I've Learned</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Jekyll Basics</h3>
-                <p>File structure, front matter, layouts, and templating fundamentals.</p>
-            </div>
-            <div class="card">
-                <h3>Sass & CSS</h3>
-                <p>Variables, nesting, mixins, and modern CSS architecture.</p>
-            </div>
-            <div class="card">
-                <h3>Organization</h3>
-                <p>Best practices for maintainable, scalable Jekyll projects.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="recent-projects">
-        <h2>Recent Projects</h2>
-        {% for project in site.projects limit:2 %}
-        <article class="project-preview">
-            <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
-            <p><strong>Tech:</strong> {{ project.tech }}</p>
-            <p><strong>Status:</strong> {{ project.status }}</p>
-            <p>{{ project.content | strip_html | truncate: 100 }}</p>
-        </article>
-        {% endfor %}
-    </section>
-</div>
+This site represents my comprehensive learning path through Jekyll and static site generation. Starting from absolute basics, I've built up skills in:
+
+- **Modern web architecture** with Jekyll's powerful templating system
+- **Professional development practices** including version control and deployment
+- **Responsive design** with Sass and modern CSS techniques
+- **Content management** through collections, data files, and organized structure
+
+## Current Focus
+
+I'm currently working on mastering advanced Jekyll patterns and studying professional portfolio sites to understand sophisticated design and development techniques.
+
+## Connect & Learn
+
+Feel free to explore my projects and learning demos. This site serves as both a portfolio and a documentation of my development journey.
+
+[View My Projects](/projects.html){: .btn .btn-primary}
+[Read About My Process](/about/){: .btn .btn-secondary}
