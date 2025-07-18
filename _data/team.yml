@@ -1,0 +1,9 @@
+- name: Tanay Nagar
+  role: Student
+  bio: Learning Jekyll from scratch
+  twitter: "@tanay"
+  
+- name: Claude
+  role: AI Assistant
+  bio: Helping with Jekyll education
+  twitter: "@anthropic"

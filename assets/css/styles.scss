@@ -1,0 +1,113 @@
+---
+# Front matter tells Jekyll to process this file
+---
+
+// 1. SASS VARIABLES - store values to reuse
+$primary-color: #007acc;
+$secondary-color: #333;
+$light-gray: #f0f0f0;
+$white: #fff;
+$text-color: #444;
+$border-radius: 8px;
+$font-stack: Arial, sans-serif;
+
+// 2. SASS NESTING - write CSS inside CSS
+body {
+  font-family: $font-stack;
+  margin: 0;
+  background: $light-gray;
+  color: $text-color;
+  
+  // This becomes "body a"
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    
+    // This becomes "body a:hover"
+    &:hover {
+      text-decoration: underline;
+      color: darken($primary-color, 10%);
+    }
+  }
+}
+
+// 3. SASS MIXINS - reusable code blocks
+@mixin button-style($bg-color, $text-color: $white) {
+  background: $bg-color;
+  color: $text-color;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: darken($bg-color, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+// 4. USING MIXINS AND NESTING TOGETHER
+.nav {
+  background: $secondary-color;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  
+  a {
+    color: $white;
+    margin-right: 1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    
+    &:hover {
+      background: rgba($white, 0.1);
+      text-decoration: none;
+    }
+  }
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: $white;
+  padding: 2rem;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+// 5. USING MIXINS
+.btn-primary {
+  @include button-style($primary-color);
+}
+
+.btn-secondary {
+  @include button-style($secondary-color);
+}
+
+.btn-danger {
+  @include button-style(#dc3545);
+}
+
+// 6. SASS FUNCTIONS
+h1 {
+  color: $secondary-color;
+  border-bottom: 2px solid $primary-color;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+// 7. SASS CALCULATIONS
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.card {
+  background: $white;
+  padding: 1rem;
+  border-radius: $border-radius;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-left: 4px solid $primary-color;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f0f0f0; }
+        .nav { background: #333; padding: 1rem; }
+        .nav a { color: white; text-decoration: none; margin-right: 1rem; }
+        .nav a:hover { text-decoration: underline; }
+        .container { max-width: 800px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 8px; }
+        h1 { color: #333; border-bottom: 2px solid #007acc; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/about_me.html">About Me</a>
+        <a href="/test.html">Test Page</a>
+        <a href="/front-matter-demo.html">Front Matter Demo</a>
+    </nav>
+    
+    <div class="container">
+        <h1>{{ page.title }}</h1>
+        
+        {{ content }}
+        
+        <hr>
+        <p><em>Navigation demo layout</em></p>
+    </div>
+</body>
+</html>
