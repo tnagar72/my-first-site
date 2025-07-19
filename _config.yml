@@ -47,6 +47,38 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
+# Advanced Jekyll Configuration
+permalink: /:categories/:year/:month/:day/:title/
+timezone: America/New_York
+encoding: utf-8
+markdown: kramdown
+highlighter: rouge
+
+# Kramdown settings
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    line_numbers: true
+    
+# Sass settings
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# SEO settings
+seo:
+  name: "Jekyll Learning Journey"
+  type: "Person"
+  links:
+    - "https://github.com/tnagar72"
+    - "https://tnagar72.github.io/my-first-site"
+
+# Social links
+social:
+  github: tnagar72
+  twitter: your_twitter
+  linkedin: your_linkedin
+
 # GitHub Pages settings
 github_username: tnagar72
 repository: my-first-site
